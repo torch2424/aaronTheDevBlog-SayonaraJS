@@ -1,9 +1,11 @@
 import angular from 'angular';
 
-import {navbar} from './navbar';
+import NavbarRouteService from './navbarRoute';
+import {Navbar} from './navbar';
 
-export const angularNavbarModule = 'angular-nav';
+export const angularNavbarModule = 'angularNav';
 
 angular
   .module(angularNavbarModule, [])
-  .component('angularNav', navbar);
+  .service('navbarRouteService', NavbarRouteService)
+  .component('angularNav', Navbar);

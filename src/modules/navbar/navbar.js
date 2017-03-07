@@ -1,11 +1,12 @@
 class NavbarController {
   /** @ngInject */
-  constructor($log) {
-    $log.debug('hi!');
+  constructor($scope, $log, navbarRouteService) {
+    this.$log = $log;
+    this.$log.debug('hi!');
+    $log.debug(navbarRouteService.getData());
   }
 }
-
-export const navbar = {
+export const Navbar = {
   template: require('./navbar.html'),
   controller: NavbarController
 };
