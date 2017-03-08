@@ -1,9 +1,9 @@
 class NavbarController {
   /** @ngInject */
   constructor($scope, $log, navbarRouteService) {
+    this.$scope = $scope;
     this.$log = $log;
-    this.$log.debug('hi!');
-    $log.debug(navbarRouteService.getData());
+    this.navbarRouteService = navbarRouteService;
   }
 }
 export const Navbar = {

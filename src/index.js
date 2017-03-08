@@ -1,21 +1,27 @@
 import angular from 'angular';
 
-import {techsModule} from './app/techs/index';
+// Import our modules
 import {angularNavbarModule} from './modules/navbar/index';
 import 'angular-ui-router';
+
+// Import our configs
 import routesConfig from './routes';
 
+// Import our main application
 import {main} from './app/main';
-import {header} from './app/header';
-import {title} from './app/title';
-import {footer} from './app/footer';
 
 import './index.scss';
 
 angular
-  .module('app', [techsModule, angularNavbarModule, 'ui.router'])
+  .module('app', [angularNavbarModule, 'ui.router'])
+  .run(navbarRouteService => {
+    /** @ngInject */
+    navbarRouteService.setTitle('Aaronthedev blog');
+    navbarRouteService.setRoutes([{
+      title: 'Home',
+      state: 'app',
+      url: '/'
+    }]);
+  })
   .config(routesConfig)
-  .component('app', main)
-  .component('fountainHeader', header)
-  .component('fountainTitle', title)
-  .component('fountainFooter', footer);
+  .component('app', main);

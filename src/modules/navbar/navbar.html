@@ -1,1 +1,12 @@
-<h1>hi!</h1>
+<div class="angular-navbar">
+  <div class="angular-navbar__title">
+    {{$ctrl.navbarRouteService.title}}
+  </div>
+  <ul class="angular-navbar__list">
+    <li ng-repeat="route in $ctrl.navbarRouteService.getRoutes()"
+      ng-click="goToState(route.state)"
+      class="angular-navbar__list__item">
+      {{route.title}}
+    </li>
+  </ul>
+</div>

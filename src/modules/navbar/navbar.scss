@@ -1,0 +1,29 @@
+.angular-navbar {
+  width: 100%;
+  background-color: $navbar;
+  color: $inverse;
+
+  @include element('title') {
+    font-size: 1.75em;
+
+    @include not-mobile() {
+      display: inline-block;
+    }
+  }
+
+  @include element('list') {
+
+    padding-left: 0px;
+    /* Remove Bullets */
+    list-style-type: none;
+
+    @include not-mobile() {
+      margin-left: 20px;
+      display: inline-block;
+    }
+
+    @include element('item') {
+      font-size: 1.5em;
+    }
+  }
+}
