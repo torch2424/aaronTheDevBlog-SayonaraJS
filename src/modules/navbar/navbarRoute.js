@@ -1,12 +1,9 @@
 class NavbarRouteService {
   constructor() {
     this.title = '';
+    this.titleRoute = {};
     this.routes = {};
     this.activeRoute = '';
-  }
-
-  setTitle(title) {
-    this.title = title;
   }
 
   /**
@@ -24,6 +21,14 @@ class NavbarRouteService {
   */
   setRoutes(routes) {
     this.routes = routes;
+  }
+
+  setTitle(title, route) {
+    this.title = title;
+
+    if (route) {
+      this.titleRoute = route;
+    }
   }
 
   getRoutes() {

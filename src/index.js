@@ -16,8 +16,22 @@ angular
   .module('app', [angularNavbarModule, 'ui.router'])
   .run(navbarRouteService => {
     /** @ngInject */
-    navbarRouteService.setTitle('Aaronthedev blog');
+    navbarRouteService.setTitle('Aaronthedev Blog', {
+      title: 'Home',
+      state: 'app',
+      url: '/'
+    });
     navbarRouteService.setRoutes([{
+      title: 'Home',
+      state: 'app',
+      url: '/'
+    },
+    {
+      title: 'Home',
+      state: 'app',
+      url: '/'
+    },
+    {
       title: 'Home',
       state: 'app',
       url: '/'
