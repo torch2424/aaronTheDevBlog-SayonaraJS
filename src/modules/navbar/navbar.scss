@@ -1,3 +1,23 @@
+.always-show {
+  @include all-mobile() {
+    display: block !important;
+  }
+
+  @include not-mobile() {
+    display: block !important;
+  }
+}
+
+.always-hide {
+  @include all-mobile() {
+    display: none !important;
+  }
+
+  @include not-mobile() {
+    display: none !important;
+  }
+}
+
 .angular-navbar {
   width: 100%;
   background-color: $navbar;
@@ -14,6 +34,16 @@
     //Hide on mobile
     @include all-mobile() {
       display: none;
+    }
+
+    //If always show
+    @include modifier('always-show') {
+      @extend .always-show;
+    }
+
+    //If Always hide
+    @include modifier('always-hide') {
+      @extend .always-hide;
     }
 
     @include element('title') {
@@ -61,6 +91,16 @@
     //Hide on desktop
     @include not-mobile() {
       display: none;
+    }
+
+    //If always show
+    @include modifier('always-show') {
+      @extend .always-show;
+    }
+
+    //If Always hide
+    @include modifier('always-hide') {
+      @extend .always-hide;
     }
 
     //Hamburger menu

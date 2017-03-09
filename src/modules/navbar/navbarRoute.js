@@ -4,6 +4,10 @@ class NavbarRouteService {
     this.titleRoute = {};
     this.routes = {};
     this.activeRoute = '';
+
+    // Always show
+    this.alwaysDesktop = false;
+    this.alwaysMobile = false;
   }
 
   /**
@@ -33,6 +37,16 @@ class NavbarRouteService {
 
   getRoutes() {
     return this.routes;
+  }
+
+  enableAlwaysDesktop() {
+    this.alwaysDesktop = true;
+    this.alwaysMobile = false;
+  }
+
+  enableAlwaysMobile() {
+    this.alwaysDesktop = false;
+    this.alwaysMobile = true;
   }
 }
 

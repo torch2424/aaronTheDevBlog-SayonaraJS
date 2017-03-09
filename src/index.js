@@ -16,26 +16,12 @@ angular
   .module('app', [angularNavbarModule, 'ui.router'])
   .run(navbarRouteService => {
     /** @ngInject */
+    navbarRouteService.enableAlwaysDesktop();
     navbarRouteService.setTitle('Aaronthedev Blog', {
       title: 'Home',
       state: 'app',
       url: '/'
     });
-    navbarRouteService.setRoutes([{
-      title: 'Home',
-      state: 'app',
-      url: '/'
-    },
-    {
-      title: 'Home',
-      state: 'app',
-      url: '/'
-    },
-    {
-      title: 'Home',
-      state: 'app',
-      url: '/'
-    }]);
   })
   .config(routesConfig)
   .component('app', main);
