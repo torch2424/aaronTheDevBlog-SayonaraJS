@@ -50,6 +50,10 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     FailPlugin,
+    new webpack.DefinePlugin({
+      PRODUCTION: JSON.stringify(true),
+      API_URL: JSON.stringify('')
+    }),
     new HtmlWebpackPlugin({
       template: conf.path.src('index.html')
     }),
