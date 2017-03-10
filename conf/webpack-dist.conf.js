@@ -59,7 +59,7 @@ module.exports = {
     }),
     new webpack.optimize.UglifyJsPlugin({
       output: {comments: false},
-      compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
+      compress: {unused: false, dead_code: false, warnings: false} // eslint-disable-line camelcase
     }),
     new ExtractTextPlugin('index-[contenthash].css'),
     new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
