@@ -59,9 +59,9 @@ module.exports = {
     }),
     new webpack.optimize.UglifyJsPlugin({
       output: {comments: false},
-      compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
+      compress: {unused: false, dead_code: false, warnings: false} // eslint-disable-line camelcase
     }),
-    new ExtractTextPlugin('index.css'),
+    new ExtractTextPlugin('index-[contenthash].css'),
     new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
     new webpack.LoaderOptionsPlugin({
       options: {
@@ -71,7 +71,7 @@ module.exports = {
   ],
   output: {
     path: path.join(process.cwd(), conf.paths.dist),
-    filename: '[name].js'
+    filename: '[name]-[hash].js'
   },
   entry: {
     app: `./${conf.path.src('index')}`,
