@@ -1,5 +1,9 @@
 .c-main {
 
+  @include element('page-content') {
+    margin-bottom: 20px;
+  }
+
   @include element('entry') {
 
     @include element('title-container') {

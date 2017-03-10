@@ -1,4 +1,9 @@
 <div class="c-entry">
+
+  <div class="c-entry__page-content"
+    ng-bind-html="$ctrl.$sce.trustAsHtml($ctrl.sayonaraSite.pages[0].content)">
+  </div>
+
     <div class="c-entry__entry__title-container">
       <h1 class="c-entry__entry__title-container__title">
         {{$ctrl.entry.title}}
