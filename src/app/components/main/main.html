@@ -1,3 +1,21 @@
-<div>
-  Home Page
+<div class="c-main">
+  <div class="c-main__entry"
+    ng-repeat="entry in $ctrl.sayonaraSite.pages[0].entryTypes[0].entries">
+    <div class="c-main__entry__title-container">
+      <h1 class="c-main__entry__title-container__title">
+        {{entry.title}}
+      </h1>
+    </div>
+
+    <div class="c-main__entry__content animated fadeIn"
+      ng-bind-html="$ctrl.$sce.trustAsHtml(entry.content)">
+    </div>
+
+    <div class="c-main__entry__divider">
+    </div>
+
+    <div class="c-main__entry__read-more">
+      Read more...
+    </div>
+  </div>
 </div>

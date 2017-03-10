@@ -19,14 +19,21 @@ angular
   .module('app', [angularNavbarModule, 'ui.router'])
   .config(routesConfig)
   .service('sayonaraService', Sayonara)
-  .component('app', main)
-  .run(($log, sayonaraService, navbarRouteService) => {
+  .run(($log, $timeout, sayonaraService, navbarRouteService) => {
     /** @ngInject */
-    $log.debug(sayonaraService.getSite());
-    navbarRouteService.enableAlwaysDesktop();
-    navbarRouteService.setTitle('Aaronthedev Blog', {
-      title: 'Home',
-      state: 'app',
-      url: '/'
+
+    // Start polling for the site
+    sayonaraService.getSite().then(response => {
+      $timeout(() => {
+        navbarRouteService.setTitle(response.siteName, {
+          title: 'Home',
+          state: 'app',
+          url: '/'
+        });
+      }, 0);
     });
-  });
+
+    // Set up our nav
+    navbarRouteService.enableAlwaysDesktop();
+  })
+  .component('app', main);
