@@ -1,8 +1,12 @@
+/* Import our fonts (from google Fonts) */
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans|Open+Sans|Roboto|Source+Sans+Pro|Ubuntu');
+
 /* Import global styles */
 @import 'styles/variables';
 @import 'styles/mediaQuery';
 @import 'styles/bem';
 @import 'styles/animate';
+@import 'styles/quill';
 
 /* Import module styles */
 @import 'modules/navbar/navbar';
@@ -16,6 +20,14 @@ body {
 
 html {
   background-color: $paper;
+}
+
+* {
+    font-family: 'Roboto','Open Sans', 'Source Sans Pro', 'Droid Sans', 'Ubuntu', sans-serif;
+}
+
+.app-page-content {
+
 }
 
 .app-container {

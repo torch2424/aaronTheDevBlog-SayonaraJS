@@ -9,6 +9,7 @@ class EntryController {
     this.sayonaraService = sayonaraService;
 
     // Initialize our entry
+    this.sayonaraSite = {};
     this.entry = {};
   }
 
@@ -16,6 +17,7 @@ class EntryController {
     // Get the entry
     this.sayonaraService.getSite().then(siteJson => {
       // Go to our entry array
+      this.sayonaraSite = siteJson;
       const entries = siteJson.pages[0].entryTypes[0].entries;
 
       // Find the entry we are looking for
