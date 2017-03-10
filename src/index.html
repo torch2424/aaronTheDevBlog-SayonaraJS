@@ -6,11 +6,15 @@
     <title>Aaronthedev Blog</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="http://fountainjs.io/assets/imgs/fountain.png" />
+    <link rel="icon" type="image/png" href="https://avatars0.githubusercontent.com/u/1448289?v=3&s=460" />
+    <link href="//cdn.quilljs.com/1.2.2/quill.core.css" rel="stylesheet">
   </head>
 
   <body ng-app="app">
     <angular-nav></angular-nav>
+    <div class="app-page-content"
+      ng-bind-html="$ctrl.$sce.trustAsHtml($ctrl.sayonaraSite.pages[0].content)">
+    </div>
     <div class="app-container">
       <ui-view>
       </ui-view>
