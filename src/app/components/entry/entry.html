@@ -14,6 +14,10 @@
       ng-bind-html="$ctrl.$sce.trustAsHtml($ctrl.entry.content)">
     </div>
 
+    <div class="c-entry__entry__date">
+      {{$ctrl.entry.date | date:'longDate'}}
+    </div>
+
     <div class="c-entry__entry__back-container">
       <div class="c-entry__entry__back-container__back"
         ng-click="$ctrl.goBackHome()">

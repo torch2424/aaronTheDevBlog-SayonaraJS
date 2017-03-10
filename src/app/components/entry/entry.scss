@@ -25,6 +25,11 @@
       margin-right: auto;
     }
 
+    @include element('date') {
+      margin-top: 10px;
+      text-align: right;
+    }
+
     @include element('back-container') {
       display: block;
       margin-left: auto;
