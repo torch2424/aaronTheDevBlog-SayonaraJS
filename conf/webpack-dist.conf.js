@@ -58,6 +58,7 @@ module.exports = {
       template: conf.path.src('index.html')
     }),
     new webpack.optimize.UglifyJsPlugin({
+      mangle: false,
       output: {comments: false},
       compress: {unused: false, dead_code: false, warnings: false} // eslint-disable-line camelcase
     }),
