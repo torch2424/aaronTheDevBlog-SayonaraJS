@@ -1,8 +1,9 @@
 class Sayonara {
 
   /** @ngInject */
-  constructor($log, $http) {
+  constructor($log, $location, $http) {
     this.$log = $log;
+    this.$location = $location;
     this.$http = $http;
 
     // Promise of getting blog json
@@ -15,7 +16,7 @@ class Sayonara {
     // Production and API URL from webpack config
     if (PRODUCTION) {
       // Point to prod sayonara
-      sayonaraUrlHost = '//' + this.document.location.host;
+      sayonaraUrlHost = '//' + this.$location.host();
     } else {
       // Point to Dev sayonara
       sayonaraUrlHost = API_URL;
