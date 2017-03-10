@@ -12,6 +12,7 @@ import Sayonara from './app/services/sayonara';
 
 // Import our components
 import {main} from './app/components/main/main';
+import {entry} from './app/components/entry/entry';
 
 import './index.scss';
 
@@ -36,4 +37,5 @@ angular
     // Set up our nav
     navbarRouteService.enableAlwaysDesktop();
   })
-  .component('app', main);
+  .component('app', main)
+  .component('entry', entry);

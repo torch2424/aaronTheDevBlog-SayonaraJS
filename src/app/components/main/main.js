@@ -1,9 +1,10 @@
 class MainController {
   /** @ngInject */
-  constructor($log, $timeout, $sce, sayonaraService) {
+  constructor($log, $timeout, $sce, $location, sayonaraService) {
     this.$log = $log;
     this.$timeout = $timeout;
     this.$sce = $sce;
+    this.$location = $location;
     this.sayonaraService = sayonaraService;
 
     this.sayonaraSite = {};
@@ -16,6 +17,10 @@ class MainController {
         this.sayonaraSite = siteJson;
       }, 0);
     });
+  }
+
+  goToEntry(entry) {
+    this.$location.path('/entry/' + entry.title);
   }
 }
 
