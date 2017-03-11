@@ -5,6 +5,7 @@
   }
 
   @include element('entry') {
+    margin-bottom: 50px;
 
     @include element('title-container') {
       display: block;
@@ -16,6 +17,7 @@
         display: inline-block;
         color: $standard;
         transition: all 0.5s;
+        margin-bottom: 10px;
 
         &:hover {
           color: lighten($standard, 35%);
@@ -29,10 +31,11 @@
       margin-right: auto;
 
 
-      max-height: 100px;
+      max-height: 300px;
       overflow: hidden;
 
-      p {
+      * {
+        overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         width: 100%;
